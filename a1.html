@@ -1,0 +1,39 @@
+<html>
+
+<body>
+  <h1>Java Script Class Project.</h1>
+  <p id="i1"></p>
+  <p id="i2"></p>
+  <script>
+    class student {
+      constructor(name, year) {
+        this.name = name;
+        this.year = year;
+      }
+      age() {
+        let d = new Date();
+        return d.getFullYear() - this.year;
+      }
+    }
+    class result extends student {
+      constructor(name, year, percent) {
+        super(name, year);
+        this.percent = percent;
+      }
+      show() {
+        return this.age() + " and i scored " + this.percent;
+      }
+      static f1() { return "Hey"; }
+    }
+
+    s2 = new result('Sana', 2008, 90);
+    document.getElementById('i2').innerHTML = result.f1() + " My name is " + s2.name + ",I was born in " + s2.year + " and my age is " + s2.show();
+
+    s1 = new student('Arnold', 2009);
+    document.getElementById('i1').innerHTML = "My name is " + s1.name + ", i was born in " + s1.year + " and my age is " + s1.age();
+   
+
+  </script>
+</body>
+
+</html>
